@@ -1,0 +1,4 @@
+python.exe .\get-cvrf.py download CVE-2022-41303 2023-Sep
+python.exe .\get-cvrf.py read CVE-2023-2312 2023-Sep
+python.exe .\get-cvrf.py batch cvelist.txt 2023-Sep
+
