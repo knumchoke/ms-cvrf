@@ -132,8 +132,8 @@ if __name__ == "__main__":
     if len(sys.argv) != 4:
         print(
             "Usage: python get-cvrf.py <mode> <CVE> <folder>"
-            + '\r\nmode   : "download" will read from new download file'
-            '\r\n       : "read" will convert json from download mode to csv'
+            + '\r\nmode   : "download" will download json CVE data'
+            '\r\n       : "read" will convert json from `download mode to` csv'
             '\r\n       : "batch" will run download and read using cve list from text file'
             "\r\nCVE    : is CVE number in format CVE-yyyy-nnnnn"
             '\r\nfolder : folder that this script will write the file to, upto the running mode, "download" will write to json, "read" will write to csv, "batch" will write to both folder'
