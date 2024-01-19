@@ -18,7 +18,7 @@
 
 - `download` will download json CVE data.
 - `read` will convert json from `download` mode to csv.
-- `batch` will run `download` and `read` using cve number listed in text file. Then merging to `CVE-all.csv` and convert to `out_put_excel_file.xlsx`
+- `batch` will run `download` and `read` using cve number listed in text file. Then merging to `CVE-all.csv` and convert to `CVE-all.xlsx`
 
 ### Parameters
 
