@@ -6,11 +6,7 @@ import glob
 import os
 import csv
 import time
-from openpyxl import Workbook
 from openpyxl.utils.dataframe import dataframe_to_rows
-from openpyxl.styles import Font
-from openpyxl.drawing.image import Image
-from openpyxl.worksheet.hyperlink import Hyperlink
 
 
 def getCVRF(folder, cve):
@@ -128,6 +124,16 @@ def mergecsv(folder):
         print(f"An error occurred: {e}")
 
 
+def csvToXlsx(input, output):
+    data = pd.read_csv(input, sep='\t')
+    try:
+        with pd.ExcelWriter(output, engine='openpyxl') as writer:
+            data.to_excel(writer, index=False)
+        print(f"Files have been converted to " + output)
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
 if __name__ == "__main__":
     if len(sys.argv) != 4:
         print(
@@ -178,7 +184,6 @@ if __name__ == "__main__":
                 )
                 # print(line)
             mergecsv(folder)
-            print("data exported to json|csv/" + folder + "/" + cve + ".json")
-            print("CVE list merged to CVE-all.csv")
+            csvToXlsx('CVE-all.csv', 'CVE-all.xlsx')
         else:
             print("parameter not met requirement")
