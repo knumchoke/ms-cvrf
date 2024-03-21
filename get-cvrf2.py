@@ -3,8 +3,6 @@ import sys
 import os
 import json
 import pandas as pd
-from openpyxl import Workbook
-from openpyxl.utils.dataframe import dataframe_to_rows
 
 
 def formatCVRF(json_data):
